@@ -37,6 +37,8 @@ This is a Next.js project web application which can be used to create and share 
 7. The App will be live on `http://localhost:3000`
 
 
+![Screenshot 2023-05-30 173229](https://github.com/Anurag2293/promptopia_v1/assets/83635812/d6dcd6a3-b1c8-4a80-9966-e357cabd2b62)
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
