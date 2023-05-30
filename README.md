@@ -1,31 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Promptopia V1
 
-## Getting Started
+This is a Next.js project web application which can be used to create and share AI prompts to all users.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+### Key Features
+- Full Stack App
+- Latest version of Next.js
+- Tailwind CSS for Styling
+- Google Authentication using Next Auth
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Run Locally
+1. Download and unzip the zipped code
+2. In the source directory run ```npm install```
+3. Create a `.env` file and add the following keys:
+    ````
+    MONGODB_URI=mongodb://localhost:27017
+    NEXTAUTH_URL=http://localhost:3000
+    NEXTAUTH_URL_INTERNAL=http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    NEXTAUTH_SECRET=
+    GOOGLE_ID=
+    GOOGLE_CLIENT_SECRET=
+    ````
+4. For `NEXTAUTH_SECRET` run `openssl rand -base64 32` in the command line to generate a random secret string
+5. For `GOOGLE_ID` & `GOOGLE_CLIENT_SECRET`, go to [Google Cloud Console](https://console.cloud.google.com/welcome)
+    1. Create a new project and name it `Promtopia_v1`
+    2. In the Welcome screen go to `Navigation Menu` -> `APIs & Services` -> `OAuth consent screen`
+    3. Click Create and then Enter **App information** & **Developer contact information**
+    4. After this Navigate to **Credentials** tab click `CREATE CREDENTIALS` -> `OAUTH CLIENT ID`
+    5. In **Applicaton type** dropdown, choose `Web Application`
+    6. Now under **Authorized JavaScript origins**, enter `http://localhost:3000`
+    7. Under **Authorized redirect URIs**, enter `http://localhost:3000` and `http://localhost:3000/api/auth/callback/google`
+    8. Click `CREATE` and in the pop up you get the `Client ID` and `Client secret` corresponding to `GOOGLE_ID` & `GOOGLE_CLIENT_SECRET` respectively.
+6. Now run `npm run dev` to start the App.
+7. The App will be live on `http://localhost:3000`
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
